@@ -1,5 +1,5 @@
 // Coding By IOXhop : www.ioxhop.com
-// This version 0.1
+// This version 0.2
 
 #include "BLE.h"
 
@@ -17,8 +17,7 @@ void setup() {
     Serial.print("Characteristic UUID: 0x");
     Serial.println(char_uuid, HEX);
 	
-    String str = String("OK !");
-    ble.reply((char*)str.c_str(), str.length());
+    ble.reply("OK !");
   });
   
   ble.on(WRITE, [](int service_uuid, int char_uuid) {
